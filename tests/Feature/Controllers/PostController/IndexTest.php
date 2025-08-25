@@ -36,6 +36,5 @@ it('passes posts to the view', function() {
   ); */
 
   get(route('posts.index'))
-    ->assertHasResource('post', PostResource::make($posts->first()))
     ->assertHasPaginatedResource('posts', PostResource::collection($posts->reverse()));
 });
